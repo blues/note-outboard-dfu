@@ -9,7 +9,7 @@ def signatureBlinky(pin):
     for i in range(20, -10, -1):
         scale = max(i,0)+4
         pin.value = True
-        sleep(0.005 * scale)        
+        sleep(0.005 * scale)
         pin.value = False
         sleep(0.003 * scale)
 
