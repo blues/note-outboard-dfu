@@ -4,7 +4,8 @@
 #include <ButtonDebounce.h>
 
 #define serialDebugOut Serial
-#define PRODUCT_UID "" // Set Product UID here
+ // Set Product UID here
+#define PRODUCT_UID ""
 
 Notecard notecard;
 ButtonDebounce button(USER_BTN, 200);
