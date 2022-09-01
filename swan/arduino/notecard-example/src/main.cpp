@@ -5,7 +5,7 @@
 
 #define serialDebugOut Serial
  // Set Product UID here
-#define PRODUCT_UID ""
+#define PRODUCT_UID "com.blues.bsatrom:outboard_dfu_demo"
 
 Notecard notecard;
 ButtonDebounce button(USER_BTN, 200);
