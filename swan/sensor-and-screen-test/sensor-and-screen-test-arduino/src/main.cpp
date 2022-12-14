@@ -15,7 +15,6 @@
 // pressure at the sea level in hectopascal (is equivalent to milibar)
 #define SEALEVELPRESSURE_HPA (1013.25)
 
-#define PRODUCT_UID "com.blues.brandon:outboard_dfu_test"
 Notecard notecard;
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
@@ -41,7 +40,6 @@ void setup() {
   notecard.begin();
 
   J *req = notecard.newRequest("hub.set");
-  JAddStringToObject(req, "product", PRODUCT_UID);
   JAddStringToObject(req, "sn", "arduino-notecard");
   JAddStringToObject(req, "mode", "continuous");
   notecard.sendRequest(req);

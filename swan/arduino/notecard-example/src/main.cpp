@@ -4,8 +4,6 @@
 #include <ButtonDebounce.h>
 
 #define serialDebugOut Serial
- // Set Product UID here
-#define PRODUCT_UID "com.blues.bsatrom:outboard_dfu_demo"
 
 Notecard notecard;
 ButtonDebounce button(USER_BTN, 200);
@@ -35,7 +33,6 @@ void setup() {
   notecard.begin();
 
   J *req = notecard.newRequest("hub.set");
-  JAddStringToObject(req, "product", PRODUCT_UID);
   JAddStringToObject(req, "mode", "continuous");
 	JAddStringToObject(req, "sn", "arduino-notecard");
   notecard.sendRequest(req);

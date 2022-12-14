@@ -1,5 +1,5 @@
 /*
- * Written by Ray Ozzie and Blues Inc. team.
+ * Written by the Blues Inc. team.
  *
  * Copyright (c) 2019 Blues Inc. MIT License. Use of this source code is
  * governed by licenses granted by the copyright holder including that found in
@@ -21,9 +21,6 @@
 
 // Notecard node-c helper methods
 #include "notecard.c"
-
-// Set your ProductUID Here
-#define PRODUCT_UID ""
 
 #define SLEEP_TIME_MS	1
 
@@ -102,7 +99,6 @@ void main(void)
 
 	// Send a Notecard hub.set using note-c
 	J *req = NoteNewRequest("hub.set");
-	JAddStringToObject(req, "product", PRODUCT_UID);
 	JAddStringToObject(req, "mode", "continuous");
 	JAddStringToObject(req, "sn", "zephyr-notecard");
 
