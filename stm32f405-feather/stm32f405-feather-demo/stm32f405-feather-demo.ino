@@ -18,12 +18,11 @@ void setup()
 
     J *req = notecard.newRequest("hub.set");
     JAddStringToObject(req, "mode", "continuous");
-    JAddStringToObject(req, "sn", "stm32-micromod");
+    JAddStringToObject(req, "sn", "stm32-feather-v1");
     notecard.sendRequest(req);
 
     req = notecard.newRequest("card.dfu");
-    // Use "stm32_bi" to target the SparkFun MicroMod STM32
-    JAddStringToObject(req, "name", "stm32-bi");
+    JAddStringToObject(req, "name", "stm32");
     JAddBoolToObject(req, "on", true);
     notecard.sendRequest(req);
 }
