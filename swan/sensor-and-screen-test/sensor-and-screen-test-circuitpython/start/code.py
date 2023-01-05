@@ -7,7 +7,6 @@ import terminalio
 from adafruit_display_text import label
 import adafruit_displayio_ssd1306
 
-productUID = "com.blues.bsatrom:outboard_dfu_demo"
 version = "v1.0"
 
 displayio.release_displays()
@@ -49,7 +48,6 @@ text_area = label.Label(terminalio.FONT, text=text, color=0xFFFF00, x=18, y=15)
 splash.append(text_area)
 
 req = {"req": "hub.set"}
-req["product"] = productUID
 req["mode"] = "continuous"
 card.Transaction(req)
 

@@ -4,9 +4,6 @@ import digitalio
 from adafruit_debouncer import Debouncer
 import notecard
 
-# Set your Product UID here
-productUID = "o"
-
 btn = digitalio.DigitalInOut(board.BUTTON_USR)
 btn.direction = digitalio.Direction.INPUT
 btn.pull = digitalio.Pull.UP
@@ -25,7 +22,6 @@ def main():
     card = notecard.OpenI2C(i2c, 0, 0, debug = True)
 
     req = {"req": "hub.set"}
-    req["product"] = productUID
     req["mode"] = "continuous"
     req["sn"] = "circuitpython-notecard"
     rsp = card.Transaction(req)
