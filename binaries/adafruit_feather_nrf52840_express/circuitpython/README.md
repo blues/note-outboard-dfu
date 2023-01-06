@@ -1,7 +1,7 @@
 
 ## CircuitPython Interpreter for Adafruit Feather nRF52840 Express
 
-> NB: Ensure your device has the [bootloader](../bootloader/README.md) installed before following these steps.
+> Note: Ensure your device has the [bootloader](../bootloader/README.md) installed before following these steps.
 
 The [Circuit Python distribution](https://circuitpython.org/board/feather_nrf52840_express/) for this board provides a `.uf2` file. This is indended for UF2 bootloaders. To use this with Notecard Outboard Firmware Updates, the `.uf2` file should first be converted to a `.bin` file.
 
