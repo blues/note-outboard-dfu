@@ -17,7 +17,7 @@ To try out any of these nRF52840 examples, you will need
 2. Insert the Notecard into the Notecarrier as described in our [quickstart guide](https://dev.blues.io/quickstart/notecard-quickstart/notecard-and-notecarrier-f/).
 3. Connect the micro USB cable from your computer to the Notecarrier micro USB port
 4. Continue to follow the quickstart guide to create a Notehub project and setup the ProductUID on the notecard using the in-browser terminal.
-5. IMPORTANT: While still connected to the in-brewser terminal, enter this request
+5. IMPORTANT: While still connected to the in-browser terminal, enter this request
 ```
     {"req":"card.dfu","name":"nrf52"}
 ```
