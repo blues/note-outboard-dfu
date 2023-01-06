@@ -1,4 +1,4 @@
-# Circuit Python implementation of Blinky
+# CircuitPython Implementation of Blinky
 
 
 ## Prerequisites
