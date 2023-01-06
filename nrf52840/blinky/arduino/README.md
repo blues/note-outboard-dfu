@@ -1,7 +1,5 @@
 # Arduino implementation of Blinky
 
-
-
 ### One time setup - Installing libraries and support for Adafruit nRF52 boards
 
 1. Install the Arduino IDE
