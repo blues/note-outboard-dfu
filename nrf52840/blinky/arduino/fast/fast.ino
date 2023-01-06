@@ -18,6 +18,7 @@ void setup()
 
     J *req = notecard.newRequest("hub.set");
     JAddStringToObject(req, "mode", "continuous");
+    JAddBoolToObject(req, "sync", true);
     JAddStringToObject(req, "sn", "blinky-arduino-fast");
     notecard.sendRequest(req);
 
