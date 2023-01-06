@@ -8,7 +8,7 @@
 
 ## Creating a binpack for CircuitPython scripts
 
-Creaing binpack file for Circuit Python scripts is done in 2 stages:
+Creaing binpack file for CircuitPython scripts is done in 2 stages:
 
 1. run the [CircuitPython filesystem builder](https://github.com/blues/circuitpython-fs-builder) to create a `.cpy` file containing the scripts. For example,
 
