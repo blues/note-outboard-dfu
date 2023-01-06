@@ -1,6 +1,10 @@
 #include <Arduino.h>
 #include <Notecard.h>
 
+#ifndef NRF52840_XXAA
+#error This example is for the Adafruit Feather nRF52840 Express only
+#endif
+
 #define serialDebugOut Serial
 
 Notecard notecard;
