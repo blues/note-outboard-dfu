@@ -1,4 +1,4 @@
-# nRF52840 Notecard Outboard Firmware Update
+# Adafruit nRF52840 Feather Express Notecard Outboard Firmware Update
 
 Examples of Notecard Outboard Firmware Update on the Adafruit Feather nRF52840 Express
 
@@ -17,11 +17,11 @@ To try out any of these nRF52840 examples, you will need
 2. Insert the Notecard into the Notecarrier as described in our [quickstart guide](https://dev.blues.io/quickstart/notecard-quickstart/notecard-and-notecarrier-f/).
 3. Connect the micro USB cable from your computer to the Notecarrier micro USB port
 4. Continue to follow the quickstart guide to create a Notehub project and setup the ProductUID on the notecard using the i-browser terminal.
-5. IMPORTANT: While still connected to the in-brewser terminal, enter these commands, one line at a time:
+5. IMPORTANT: While still connected to the in-brewser terminal, enter this request
 ```
     {"req":"card.dfu","name":"nrf52"}
 ```
-If the 
+ 
 6. Disconnect the micro USB cable from the Notecarrier
 7. Insert the Adafruit Feather nRF52840 Express into the feather socket on the Notecarrier.
 8. Connect the USB cable to the USB port on the Adafruit Feather nRF52840 Express.
@@ -31,7 +31,7 @@ If the
 
 1. Follow the [Update Bootloader](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/update-bootloader) guide to be sure your current bootloader is at least 0.6.1.
 2. Press the reset button the nRF52480
-3. Download [this file](./binaries/update-feather_nrf52840_express_bootloader-0.7.0-15-g62b53ae-dirty_nosd.uf2) and copy to the `FHR840BOOT` boot drive.
+3. Download [this file](../binaries/adafruit_feather_nrf52840_express/bootloader/update-feather_nrf52840_express_bootloader-0.7.0-15-g62b53ae-dirty_nosd.uf2) and copy to the `FHR840BOOT` boot drive.
 4. Verify the bootloader update was successful by opening `INFO_UF2.TXT` from the boot drive and verity the version reads `UF2 Bootloader 0.7.0-15-g62b53ae-dirty`
 
 ## Install Notecard CLI

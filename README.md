@@ -1,3 +1,3 @@
-# Outboard DFU Examples
+# Notecard Outboard Firmware Update
 
-This repo contains resources related to testing, using and demonstrating the Outboard DFU feature.
+This repo contains resources related to testing, using and demonstrating the Notecard Outboard Firmware Update feature.
