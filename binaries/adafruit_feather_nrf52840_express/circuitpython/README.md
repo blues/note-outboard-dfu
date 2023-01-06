@@ -37,7 +37,7 @@ This creates a new file `flash.bin` in the current directory. Rename this to be 
 
 The resulting `.zip` file can now be used with Notecard CLI to create a binpack.
 
-### Creaate a binpack
+### Create a binpack
 
 ```
     notecard -output adafruit-circuitpython-feather_nrf52840_express-en_US-7.3.3.zip.binpack -binpack nrf52 adafruit-circuitpython-feather_nrf52840_express-en_US-7.3.3.zip
