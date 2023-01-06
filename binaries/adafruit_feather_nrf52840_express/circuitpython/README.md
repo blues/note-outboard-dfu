@@ -1,5 +1,5 @@
 
-## CircuitPython interpreter for Adafruit Feather nRF52840 Express
+## CircuitPython Interpreter for Adafruit Feather nRF52840 Express
 
 > NB: Ensure your device has the [bootloader](../adafruit_feather_nRF52840_express/README.md) installed before following these steps.
 
