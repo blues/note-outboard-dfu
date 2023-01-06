@@ -1,6 +1,6 @@
 # Swan
 
-This folder contains  Notecard Outboard Firmware Update examples specifically for the [Swan](https://blues.io/products/swan/) MCU.
+This folder contains Notecard Outboard Firmware Update examples specifically for the [Swan](https://blues.io/products/swan/) MCU.
 
 Three different applications are presented here implemented across several runtime environments:
 
