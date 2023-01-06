@@ -30,7 +30,7 @@ To try out any of these nRF52840 examples, you will need
 ## Update the Bootloader
 
 1. Follow the [Update Bootloader](https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/update-bootloader) guide to be sure your current bootloader is at least 0.6.1.
-2. Press the reset button the nRF52480
+2. Press the reset button on the nRF52480
 3. Download [this file](../binaries/adafruit_feather_nrf52840_express/bootloader/update-feather_nrf52840_express_bootloader-0.7.0-15-g62b53ae-dirty_nosd.uf2) and copy to the `FHR840BOOT` boot drive.
 4. Verify the bootloader update was successful by opening `INFO_UF2.TXT` from the boot drive and verity the version reads `UF2 Bootloader 0.7.0-15-g62b53ae-dirty`
 
