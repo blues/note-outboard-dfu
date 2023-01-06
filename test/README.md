@@ -1,6 +1,6 @@
 # Test
 
-This folder contains app that stress test Outboard DFU against a host app that is sending a high volume of commands over the I2C bus to the Notecard.
+This folder contains an app that stress tests Outboard DFU against a host app that is sending a high volume of commands over the I2C bus to the Notecard.
 
 The apps are Arduino sketches for STM32 and ESP32 boards.
 
