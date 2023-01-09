@@ -22,7 +22,7 @@ void setup()
     notecard.sendRequest(req);
 
     req = notecard.newRequest("card.dfu");
-    // Use "stm32_bi" to target the SparkFun MicroMod STM32
+    // Use "stm32-bi" to target the SparkFun MicroMod STM32
     JAddStringToObject(req, "name", "stm32-bi");
     JAddBoolToObject(req, "on", true);
     notecard.sendRequest(req);
