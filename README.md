@@ -20,4 +20,4 @@ The examples are organized by board in these subdirectories:
 
 The firmware enables Outboard Firmware Updates and sets the MCU type via the `name` property of the [`card.dfu`](https://dev.blues.io/reference/notecard-api/card-requests/#card-dfu) request. Should you start with firmware flashed locally (not using Outboard Firmware Updates), it is not necessary to pre-configure the Notecard with `card.dfu`, although doing so is perfectly fine.
 
-However if you are using Outboard Firmware Updates with a host in factory condition then you must configure the Notecard with the host MCU type via the `card.dfu` request `name` argument. This can be done with the `notecard CLI` or with the in-browser terminal at https://dev.blues.io
+However, if you are using Outboard Firmware Updates with a host in factory condition, then you must configure the Notecard with the host MCU type via the `card.dfu` request's `name` argument. This can be done with the [Notecard CLI](https://dev.blues.io/tools-and-sdks/notecard-cli/) or with the in-browser terminal at [dev.blues.io](https://dev.blues.io).
