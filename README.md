@@ -4,7 +4,7 @@ This repo contains resources related to testing, using and demonstrating the [No
 
 The examples are organized by board in these subdirectories:
 
-* [nRF52040](./nrf52840/): Examples for the Adafruit Feather nRF52840 Express, for Arduino and CircuitPython.
+* [nRF52840](./nrf52840/): Examples for the Adafruit Feather nRF52840 Express, for Arduino and CircuitPython.
 
 * [STM32](./stm32/): Features simple Arduino sketches showing how to enable Outboard Firmware Updates for the STM32F405 Feather and Micromod STM32 module.
 
