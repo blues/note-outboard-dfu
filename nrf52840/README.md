@@ -8,7 +8,7 @@ To try out any of these nRF52840 examples, you will need
 
 * an [Adafruit Feather nRF52840 Express](https://www.adafruit.com/product/4062?gclid=CjwKCAiAh9qdBhAOEiwAvxIokxLunz0eaSt1G6FXLscbVd6eswxs_La2SP-qHfRYP6VBp_OOnlwOJxoC0WQQAvD_BwE)
 * a [Notecarrier-F](https://shop.blues.io/collections/notecarrier/products/notecarrier-f)
-* a [Notecard](https://shop.blues.io/collections/notecard)
+* a [Notecard](https://shop.blues.io/collections/notecard) running firmware version 3.5.1 or newer.
 * a micro USB cable
 
 ## Notecard and Notehub Setup
