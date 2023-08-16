@@ -20,7 +20,7 @@
 Run this command to create a binpack for the `.zip` file produced above
 
 ```
-notecard -output arduino-fast.binpack -binpack nrf52 fast.ino.zip -output fast.ino.binpack
+notecard -output arduino-fast.binpack -binpack nrf52 fast.ino.zip
 ```
 
 Which will create the file `arduino-fast.binpack` in the current directory.
