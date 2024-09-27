@@ -26,7 +26,7 @@ These are the steps you take to add MCUBoot support to an existing NCS applicati
 
 If you wish to use a different pin to activate the bootloader, edit `gpio0 10` to correspond with the GPIO peripheral and port of your chosen pin.
 
-We recommend that you use a boot pin if an unused GPIO is available and is connected to Notecard's AUX3 pin. If you wish to not use a boot pin, please see [#mcuboot-configuration-options](MCUBoot configuration options) below.
+We recommend that you use a boot pin if an unused GPIO is available and is connected to Notecard's AUX3 pin. If you wish to not use a boot pin, please see  [MCUBoot Configuration Options](#mcuboot-configuration-options) below.
 
 # Building and Flashing the Example
 
@@ -34,7 +34,7 @@ We recommend that you use a boot pin if an unused GPIO is available and is conne
 
 2. When the device is reset with the boot pin held low, MCUBoot will start in serial recovery mode. This is indicated via the board's LED, which is ON while MCUBoot is active.
 
-3. You can use the `mcumgr` tool inspect and test image updates via MCUBoot. Here's a brief outline of how to install and use the tool. You can read more about the tool in the Zephyr project [mcumgr page](https://docs.zephyrproject.org/latest/services/device_mgmt/mcumgr.html)
+3. You can use the `mcumgr` tool to inspect and test image updates via MCUBoot. Here's a brief outline of how to install and use the tool. You can read more about the tool in the Zephyr project [mcumgr page](https://docs.zephyrproject.org/latest/services/device_mgmt/mcumgr.html).
 
     * If not already installed, install `mcumgr`. This assumes `go` version >= 1.18 is installed.
     ```
@@ -69,7 +69,7 @@ MCUBoot ships with default keys that are used for signing the firmware during de
 
 We will use `imgtool` that ships with the Nordic Connect SDK to generate a new key pair.
 
-1. Change directory to the `fast` directory generate a new key using `imgtool`.
+1. Change directory to the `fast` directory and generate a new key using `imgtool`.
   ```
   imgtool keygen -k child_image/priv.pem -t rsa-2048
   ```
@@ -89,15 +89,15 @@ We will use `imgtool` that ships with the Nordic Connect SDK to generate a new k
   imgtool verify -k child_image/priv.pem build/zephyr/app_update.bin
   ```
 
-5. Change directory to the `slow` version of the app. 
- ```
+5. Change directory to the `slow` version of the app.
+  ```
   cd ../slow
- ```
+  ```
 
 6. Copy the contents of `child_image` from the `fast` directory to the `slow` directory so both versions use the same key and configuration.
-    ```
-    cp ../fast/child_image/* child_image/
-    ```
+  ```
+  cp ../fast/child_image/* child_image/
+  ```
 
 7. Edit `CMakeLists.txt` and uncomment the line by removing the preceding `#` comment marker.
   ```
@@ -127,7 +127,7 @@ MCUBoot support was added in firmware version 5.2.1. Ensure that your notecard f
 
 ### Notecard Configuration
 
-In a terminal emulator, or the Notecard Playground on [blues.dev](https://blues.dev), run these commands to enable Outboard DFU with MCUBoot:
+In a terminal emulator, or the blues [In-Browser Terminal](https://dev.blues.io/terminal/), run these commands to enable Outboard DFU with MCUBoot:
 
 ```
   {"req":"card.aux", "mode":"dfu"}

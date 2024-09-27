@@ -17,3 +17,9 @@
 		mcuboot-button0 = &buttonDFU;
 	};
 };
+
+&uicr {
+    // Configures NFC pins (GPIOs 0.09 and 0.10) as regular GPIOs. Needed because Notecard's AUX3
+    // connects to GPIO 0.10 on Feather Express when Notecarrier F is used.
+    nfct-pins-as-gpios;
+};
