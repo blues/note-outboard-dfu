@@ -7,6 +7,18 @@ is expected to work with other Nordic devices with only minor changes necessary.
 
 > **Note**: The examples here use the default MCUBoot keys for signing. We strongly recommend that you create your own keys for signing firmware.
 
+### Board support
+
+The Adafruit Feather nRF52840 (both **Express** and **Sense**) is a supported upstream
+Zephyr board (`adafruit_feather_nrf52840`), so you can build for either. On recent NCS the
+Sense target is `adafruit_feather_nrf52840/nrf52840/sense` (Express:
+`adafruit_feather_nrf52840`).
+
+> **NCS version note:** the configuration in this folder uses the older `child_image/`
+> mechanism. Recent NCS (≥ 2.7) uses **sysbuild**; on those toolchains the MCUboot
+> configuration moves to `sysbuild/mcuboot/` (or `sysbuild.conf`). The board target and
+> Notecard configuration below are unchanged.
+
 ### Project Configuration
 
 These are the steps you take to add MCUBoot support to an existing NCS application:
@@ -123,7 +135,7 @@ Your device is now running the `slow` version of the app. To test upgrading, we 
 
 ## Using MCUBoot DFU with Notecard
 
-MCUBoot support was added in firmware version 5.2.1. Ensure that your notecard firmware is at least this version.
+MCUboot support was added in Notecard firmware version 5.3.1. Ensure that your Notecard firmware is at least this version.
 
 ### Notecard Configuration
 

@@ -41,7 +41,6 @@ fqbn_for() {
     */stm32/stm32f405-feather/*)  echo "STMicroelectronics:stm32:GenF4:pnum=FEATHER_F405" ;;
     */stm32/micromod-stm32/*)     echo "STMicroelectronics:stm32:GenF4:pnum=FEATHER_F405" ;;
     */test/stresstest/*)          echo "STMicroelectronics:stm32:GenF4:pnum=FEATHER_F405" ;;
-    */nrf52840/*)                 echo "adafruit:nrf52:feather52840" ;;
     *)                            echo "" ;;
   esac
 }
