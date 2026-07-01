@@ -44,6 +44,25 @@ void setup() {
   JAddStringToObject(req, "mode", "continuous");
   notecard.sendRequest(req);
 
+  // Enable Notecard Outboard Firmware Update for this STM32 host. On
+  // Notecarrier F the DFU signals are routed over the shared AUX pins.
+  req = notecard.newRequest("card.dfu");
+  JAddStringToObject(req, "name", "stm32");
+  JAddBoolToObject(req, "on", true);
+  JAddStringToObject(req, "mode", "aux");
+  notecard.sendRequest(req);
+
+  // Free the AUX pins so they can be used for Outboard Firmware Update.
+  req = notecard.newRequest("card.aux");
+  JAddStringToObject(req, "mode", "off");
+  notecard.sendRequest(req);
+
+  // Enable host DFU and report the running firmware version to Notehub.
+  req = notecard.newRequest("dfu.status");
+  JAddBoolToObject(req, "on", true);
+  JAddStringToObject(req, "version", "1.0.0");
+  notecard.sendRequest(req);
+
   if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS))
   {
     Serial.println(F("SSD1306 allocation failed"));
@@ -71,6 +90,13 @@ void setup() {
   else
   {
     Serial.println("BME680 Connected");
+
+    // Configure BME680 oversampling and filtering.
+    bmeSensor.setTemperatureOversampling(BME680_OS_8X);
+    bmeSensor.setHumidityOversampling(BME680_OS_2X);
+    bmeSensor.setPressureOversampling(BME680_OS_4X);
+    bmeSensor.setIIRFilterSize(BME680_FILTER_SIZE_3);
+    bmeSensor.setGasHeater(320, 150); // 320*C for 150 ms
   }
 
   digitalWrite(LED_BUILTIN, LOW);
@@ -78,5 +104,59 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Publish a sensor reading once per period, without blocking the loop.
+  currentMillis = millis();
+  if (currentMillis - startMillis < period) {
+    return;
+  }
+  startMillis = currentMillis;
+
+  if (!bmeSensor.performReading()) {
+    Serial.println("Failed to read from BME680 sensor");
+    return;
+  }
+
+  float temp = bmeSensor.temperature;
+  float humidity = bmeSensor.humidity;
+  float pressure = bmeSensor.pressure / 100.0;         // hPa
+  float gas = bmeSensor.gas_resistance / 1000.0;       // KOhms
+
+  Serial.print("Temperature: ");
+  Serial.print(temp);
+  Serial.println(" degrees C");
+  Serial.print("Humidity: ");
+  Serial.print(humidity);
+  Serial.println("%");
+
+  J *req = notecard.newRequest("note.add");
+  if (req != NULL)
+  {
+    JAddStringToObject(req, "file", "sensors.qo");
+    JAddBoolToObject(req, "sync", true);
+    J *body = JCreateObject();
+    if (body != NULL)
+    {
+      JAddNumberToObject(body, "temp", temp);
+      JAddNumberToObject(body, "humidity", humidity);
+      JAddNumberToObject(body, "pressure", pressure);
+      JAddNumberToObject(body, "gas", gas);
+      JAddItemToObject(req, "body", body);
+    }
+    notecard.sendRequest(req);
+  }
+
+  if (displayConnected)
+  {
+    display.clearDisplay();
+    display.setTextSize(1);
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0, 0);
+    display.print("Temp: ");
+    display.print(temp);
+    display.println(" C");
+    display.print("Humidity: ");
+    display.print(humidity);
+    display.println("%");
+    display.display();
+  }
 }

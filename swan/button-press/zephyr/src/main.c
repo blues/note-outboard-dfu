@@ -108,15 +108,28 @@ void main(void)
 		printk("Notecard hub.set failed.\n");
 	}
 
+	// On Notecarrier F the DFU signals are routed over the shared AUX pins.
 	req = NoteNewRequest("card.dfu");
-  	JAddStringToObject(req, "name", "stm32");
-  	JAddBoolToObject(req, "on", true);
+	JAddStringToObject(req, "name", "stm32");
+	JAddBoolToObject(req, "on", true);
+	JAddStringToObject(req, "mode", "aux");
 
 	if (NoteRequest(req)) {
 		printk("Notecard card.dfu successful.\n");
 	} else {
 		printk("Notecard card.dfu failed.\n");
 	}
+
+	// Free the AUX pins so they can be used for Outboard Firmware Update.
+	req = NoteNewRequest("card.aux");
+	JAddStringToObject(req, "mode", "off");
+	NoteRequest(req);
+
+	// Enable host DFU and report the running firmware version to Notehub.
+	req = NoteNewRequest("dfu.status");
+	JAddBoolToObject(req, "on", true);
+	JAddStringToObject(req, "version", "1.0.0");
+	NoteRequest(req);
 
 	if (!device_is_ready(button.port)) {
 		printk("Error: button device %s is not ready\n",

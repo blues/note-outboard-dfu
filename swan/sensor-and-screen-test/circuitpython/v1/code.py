@@ -51,9 +51,22 @@ req = {"req": "hub.set"}
 req["mode"] = "continuous"
 card.Transaction(req)
 
+# On Notecarrier F the DFU signals are routed over the shared AUX pins.
 req = {"req": "card.dfu"}
 req["name"] = "stm32"
 req["on"] = True
+req["mode"] = "aux"
+card.Transaction(req)
+
+# Free the AUX pins so they can be used for Outboard Firmware Update.
+req = {"req": "card.aux"}
+req["mode"] = "off"
+card.Transaction(req)
+
+# Enable host DFU and report the running firmware version to Notehub.
+req = {"req": "dfu.status"}
+req["on"] = True
+req["version"] = version
 card.Transaction(req)
 
 time.sleep(5)

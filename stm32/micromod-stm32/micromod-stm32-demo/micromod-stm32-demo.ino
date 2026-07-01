@@ -22,9 +22,22 @@ void setup()
     notecard.sendRequest(req);
 
     req = notecard.newRequest("card.dfu");
-    // Use "stm32_bi" to target the SparkFun MicroMod STM32
+    // Use "stm32-bi" to target the SparkFun MicroMod STM32 (inverted boot pin).
     JAddStringToObject(req, "name", "stm32-bi");
     JAddBoolToObject(req, "on", true);
+    // On Notecarrier F the DFU signals are routed over the shared AUX pins.
+    JAddStringToObject(req, "mode", "aux");
+    notecard.sendRequest(req);
+
+    // Free the AUX pins so they can be used for Outboard Firmware Update.
+    req = notecard.newRequest("card.aux");
+    JAddStringToObject(req, "mode", "off");
+    notecard.sendRequest(req);
+
+    // Enable host DFU and report the running firmware version to Notehub.
+    req = notecard.newRequest("dfu.status");
+    JAddBoolToObject(req, "on", true);
+    JAddStringToObject(req, "version", "1.0.0");
     notecard.sendRequest(req);
 }
 
