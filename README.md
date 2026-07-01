@@ -8,7 +8,9 @@ The examples are organized by board in these subdirectories:
 
 * [STM32](./stm32/): Features simple Arduino sketches showing how to enable Outboard Firmware Updates for the STM32F405 Feather and Micromod STM32 module.
 
-* [Swan](./swan/): Here you'll find basic and more advanced examples for the [Swan](https://blues.io/products/swan/) board implemented across Arduino, CircuitPython and Zephyr.
+* [Swan](./swan/): Here you'll find basic and more advanced examples for the [Swan](https://shop.blues.com/collections/feather-mcu/products/swan) board implemented across Arduino, CircuitPython and Zephyr.
+
+* [Cygnet](./cygnet/): Examples for the [Cygnet](https://shop.blues.com/collections/feather-mcu/products/cygnet) STM32 Feather MCU, in Arduino and Zephyr. Cygnet uses the same Outboard Firmware Update configuration as Swan.
 
 ## Setting ProductUID
 
