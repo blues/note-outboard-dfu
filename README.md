@@ -1,14 +1,33 @@
+# ⚠️ This repository is ARCHIVED
+
+**The Notecard Outboard Firmware Update examples have moved into the official Notecard SDK repositories and are maintained there. This repo is read-only and no longer updated.**
+
+| Example | New home |
+| --- | --- |
+| **Arduino** (STM32 — Swan, Cygnet, STM32F405 Feather, MicroMod STM32) | [note-arduino → `examples/Example10_OutboardFirmwareUpdate`](https://github.com/blues/note-arduino/tree/master/examples/Example10_OutboardFirmwareUpdate) |
+| **CircuitPython** (Swan) | [note-python → `examples/outboard-dfu`](https://github.com/blues/note-python/tree/main/examples/outboard-dfu) |
+| **Zephyr** (Swan / Cygnet) | [note-zephyr → `examples/outboard-dfu`](https://github.com/blues/note-zephyr/tree/main/examples/outboard-dfu) |
+| **Zephyr + MCUboot** (Adafruit Feather nRF52840) | [note-zephyr → `examples/mcuboot-blinky`](https://github.com/blues/note-zephyr/tree/main/examples/mcuboot-blinky) |
+
+For an overview, see [Notecard Outboard Firmware Update](https://dev.blues.io/notehub/host-firmware-updates/notecard-outboard-firmware-update/) on the Blues developer site.
+
+> The content below is retained for historical reference only.
+
+---
+
 # Notecard Outboard Firmware Update Examples
 
 This repo contains resources related to testing, using and demonstrating the [Notecard Outboard Firmware Update](https://dev.blues.io/guides-and-tutorials/notecard-guides/notecard-outboard-firmware-update/) feature.
 
 The examples are organized by board in these subdirectories:
 
-* [nRF52840](./nrf52840/): Examples for the Adafruit Feather nRF52840 Express, for Arduino and CircuitPython.
+* [STM32](./stm32/): Simple Arduino sketches showing how to enable Outboard Firmware Updates for the STM32F405 Feather and Micromod STM32 module.
 
-* [STM32](./stm32/): Features simple Arduino sketches showing how to enable Outboard Firmware Updates for the STM32F405 Feather and Micromod STM32 module.
+* [Swan](./swan/): Examples for the [Swan](https://shop.blues.com/collections/feather-mcu/products/swan) board in Arduino and CircuitPython.
 
-* [Swan](./swan/): Here you'll find basic and more advanced examples for the [Swan](https://blues.io/products/swan/) board implemented across Arduino, CircuitPython and Zephyr.
+* [Cygnet](./cygnet/): Examples for the [Cygnet](https://shop.blues.com/collections/feather-mcu/products/cygnet) STM32 Feather MCU in Arduino. Cygnet uses the same Outboard Firmware Update configuration as Swan.
+
+> **Zephyr and nRF52840/MCUboot examples now live in [note-zephyr](https://github.com/blues/note-zephyr):** the [outboard-dfu](https://github.com/blues/note-zephyr/tree/main/examples/outboard-dfu) example (Swan/Cygnet) and the [mcuboot-blinky](https://github.com/blues/note-zephyr/tree/main/examples/mcuboot-blinky) example (Adafruit Feather nRF52840).
 
 ## Setting ProductUID
 
