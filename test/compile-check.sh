@@ -95,13 +95,8 @@ else
   report SKIP "python3 not installed (.py samples not checked)"
 fi
 
-echo "== Zephyr =="
-if have west; then
-  echo "  (west found; build Zephyr samples manually with 'west build -b <board>':"
-  echo "     swan   -> swan_r5,  cygnet -> cygnet,  nRF52840 NCS -> your nRF board)"
-else
-  report SKIP "west not installed (Zephyr samples must be built with the NCS toolchain)"
-fi
+# Zephyr and MCUboot examples now live in the note-zephyr repo
+# (https://github.com/blues/note-zephyr) and are built/verified there.
 
 echo
 echo "Summary: $PASS passed, $FAIL failed, $SKIP skipped"

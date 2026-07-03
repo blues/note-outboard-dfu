@@ -20,7 +20,7 @@ The Notecard must also be in `continuous` or `periodic` mode (set via `hub.set`)
 
 ## The example apps
 
-* *button-press* running on Arduino and Zephyr. Sends a note each time the User button is pressed, with the running count and the OS the app is running on.
+* *button-press* running on Arduino. Sends a note each time the User button is pressed, with the running count.
 
 * *sensor-and-screen-test* running on Arduino. Requires a BME680 environment sensor and an SSD1306 display; reads the BME680 and publishes environmental readings to Notehub.
 
@@ -29,6 +29,7 @@ The Notecard must also be in `continuous` or `periodic` mode (set via `hub.set`)
 ## Building
 
 * **Arduino / PlatformIO** — the `platformio.ini` in each `arduino/` folder targets `board = blues_cygnet` (PlatformIO `ststm32` platform). Build with `pio run`.
-* **Zephyr** — build with the upstream Blues Cygnet board target: `west build -b cygnet`. (Swan uses `swan_r5`.)
 
 Because Cygnet has 256 KB of flash (vs 2 MB on Swan), keep an eye on image size; the examples here are small and fit comfortably.
+
+> A Zephyr version of these examples now lives in [note-zephyr](https://github.com/blues/note-zephyr/tree/main/examples/outboard-dfu) (build with `west build -b cygnet`).
